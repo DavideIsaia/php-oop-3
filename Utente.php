@@ -1,5 +1,8 @@
 <?php
+require_once __DIR__ . "/Indirizzo.php";
+
 class Utente {
+  use Indirizzo;
   public $nome;
   public $cognome;
   public $tel;

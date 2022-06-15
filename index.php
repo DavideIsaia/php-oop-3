@@ -9,7 +9,7 @@
   $dog_food = new Cibo("Enjoy Plus", "Croccantini di pollo", 24.99, "14/06/2024");
   $dog_toy = new PetToy("Molla l'osso!", "Osso da masticare", 9.99, "Gomma", "Beige");
   $cat_toy = new PetToy("Scappa Jerry!", "Giocattolo a forma di topo", 34.99, "Stoffa", "Grigio");
-  $cat_food = new Cibo("Cat Plus", "Croccantini di pesce", 34.99, "14/02/2023");
+  $cat_food = new Cibo("Cat Plus", "Croccantini di pesce", 39.99, "14/02/2023");
   $cat_food->in_stock = false;
 
   // invento utente non registrato
@@ -53,6 +53,7 @@
         <li><?php echo $dog_food->printInfo(); ?></li>
         <li><?php echo $dog_toy->printInfo(); ?></li>
         <li><?php echo $cat_toy->printInfo(); ?></li>
+        <li><s><?php echo $cat_food->printInfo(); ?></s></li>
       </ul>
       <hr>
 
