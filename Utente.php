@@ -20,9 +20,8 @@ class Utente {
   public function aggiungiCarrello($_prodotto) {
     if ($_prodotto->in_stock) {
       $this->carrello[] = $_prodotto;
-      return true;
     } else {
-      return false;
+      throw new Exception("Spiacenti, " . $_prodotto->nome . " non in magazzino.");
     }
   }
 

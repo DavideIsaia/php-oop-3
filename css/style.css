@@ -28,3 +28,17 @@ ul {
 hr {
   margin: 0.4rem 0 1rem;
 }
+
+.warning {
+  text-align: center;
+  color: orange;
+  font-weight: bolder;
+  font-size: 2rem;
+  margin: 1.5rem auto;
+}
+
+.warning::before {
+  content: "AVVISO: ";
+  font-size: 1.4rem;
+
+}

@@ -6,15 +6,22 @@
   require_once __DIR__ . "/Utente.php";
 
   // invento prodotti
-  $dog_food = new Cibo("Enjoy Plus", "Crocchette di pollo", 24.99, "14/06/2024");
+  $dog_food = new Cibo("Enjoy Plus", "Croccantini di pollo", 24.99, "14/06/2024");
   $dog_toy = new PetToy("Molla l'osso!", "Osso da masticare", 9.99, "Gomma", "Beige");
   $cat_toy = new PetToy("Scappa Jerry!", "Giocattolo a forma di topo", 34.99, "Stoffa", "Grigio");
+  $cat_food = new Cibo("Cat Plus", "Croccantini di pesce", 34.99, "14/02/2023");
+  $cat_food->in_stock = false;
 
   // invento utente non registrato
   $user1 = new Utente("Davide", "Isaia", "333-1234567");
   $user1-> aggiungiCarrello($dog_food);
   $user1-> aggiungiCarrello($dog_toy);
-
+  // provo ad aggiungere un elemento non in stock al carrello ed eseguo il controllo su di esso
+  try {
+    $user1->aggiungiCarrello($cat_food);
+  } catch (Exception $e) { ?>
+  <div class="warning"><?php echo $e->getMessage() ?></div>    
+  <?php }
   // utente registrato
   $user2 = new Utente("Dottor", "Dolittle", "393-9876543");
   $user2-> aggiungiCarrello($dog_food);
